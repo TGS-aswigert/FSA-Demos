@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Z-Index</title>
+
+    <style>
+      .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 100px;
+        box-shadow: 0 0 5px grey;
+        background-color: lightblue;
+      }
+
+      #one {
+        z-index: 4;
+      }
+
+      #two {
+        left: 80px;
+        z-index: 3;
+      }
+
+      #three {
+        left: 160px;
+        z-index: 2;
+      }
+
+      #four {
+        left: 240px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="one" class="box">1</div>
+
+    <div id="two" class="box">2</div>
+
+    <div id="three" class="box">3</div>
+
+    <div id="four" class="box">4</div>
+  </body>
+</html>
