@@ -1,0 +1,81 @@
+div {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(255, 0, 0);
+}
+
+#animated {
+  position: relative;
+  animation-name: dance, rainbow, square-to-circle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: -5s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes dance {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  
+  25% {
+    left: 500px;
+    top: 0;
+  }
+
+  50% {
+    left: 500px;
+    top: 500px;
+  }
+
+  75% {
+    left: 0;
+    top: 500px;
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+  background-color: red;
+  }
+
+  20% {
+  background-color: orange;
+  }
+
+  40% {
+  background-color: yellow;
+  }
+
+  60% {
+  background-color: green;
+  }
+
+  80% {
+  background-color: blue;
+  }
+
+  100% {
+  background-color: purple;
+  }
+}
+
+@keyframes square-to-circle {
+  0% {
+    border-radius: 0;
+  }
+
+  50% {
+    border-radius: 50%;
+  }
+
+  100% {
+    border-radius: 0;
+  }
+}
