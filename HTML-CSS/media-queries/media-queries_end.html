@@ -5,26 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    .boxes {
-        width: 50vw;
-        height: 100px;
-        margin: 20px auto;
-        padding: 20px;
-        text-align: center;
-        color: rgb(48, 48, 48);
-        font-weight: 600;
-        background-color: lightpink;
-        border-radius: 10px;
-    }
 
-    @media screen and (max-width: 800px) {
+    <style>
       .boxes {
-        width: 90vw;
+          width: 800px;
+          height: 100px;
+          margin: 20px auto;
+          padding: 20px;
+          text-align: center;
+          color: rgb(48, 48, 48);
+          font-weight: 600;
+          background-color: lightpink;
+          border-radius: 10px;
       }
-    }
-</style>
+  
+      @media screen and (max-width: 800px) {
+        .boxes {
+          width: 400px;
+        }
+      }
+  </style>
+  
+</head>
+
 <body>
     <div class="boxes">Box 1</div>
     <div class="boxes">Box 2</div>
