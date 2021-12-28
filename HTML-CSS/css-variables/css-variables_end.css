@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --primary-color: rgb(255, 94, 0);
+  --secondary-color: rgb(255, 174, 0);
+  --dark-gray: rgb(39, 39, 39);
+  --light-gray: rgb(216, 216, 216);
+  --primary-font: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--dark-gray);
+  font-family: var(--primary-font);
+  color: var(--light-gray);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+}
+
+aside {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 5px;
+  color: var(--dark-gray);
+  flex-basis: 280px;
+  flex-shrink: 0;
+  height: 350px;
+  --highlight-color: red;
+}
+
+aside span {
+  color: var(--highlight-color);
+}
+
+main {
+  padding: 10px;
+}
+
+#content {
+  display: flex;
+}
+
+.primary-highlight {
+  color: var(--highlight-color);
+}
+
+.secondary-highlight {
+  color: var(--secondary-color);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+}
