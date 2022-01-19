@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+import './Post.css';
+
+let womanProfileImg = "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+
+let parrotProfileImg = "https://images.unsplash.com/photo-1474447976065-67d23accb1e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60";
+
+export default class PostClass extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      name: "Jesse",
+      profile_image: womanProfileImg,
+      text: "This is some text in a post"
+    }
+  }
+
+  nextPost() {
+    this.setState({
+      name: "Parrot",
+      profile_image: parrotProfileImg,
+      text: "SQUAWK!"
+    });
+  }
+
+  render() {
+
+    return (
+      <div>
+
+        <div className='post'>
+          <img className='profile-img' src={this.state.profile_image} alt='profile image' />
+
+          <div className='post-text'>
+            <h3>{this.state.name}</h3>
+            <p>{this.state.text}</p>
+          </div>
+        </div>
+
+        <button onClick={this.nextPost.bind(this)}>Next Post</button>
+
+      </div>
+    )
+  }
+}

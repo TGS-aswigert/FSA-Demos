@@ -1,0 +1,32 @@
+.post {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  background-color: rgb(87, 74, 99);
+  border-radius: 10px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.post-text {
+  margin-left: 20px;
+}
+
+button {
+  display: block;
+  margin: auto;
+  padding: 6px 10px;
+  background-color: rgb(87, 74, 99);
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(54, 46, 61);
+  cursor: pointer;
+}
