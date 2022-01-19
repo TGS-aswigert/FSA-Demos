@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.doll {
+  border: 10px solid rgb(56, 37, 165);
+  margin: 50px;
+}
