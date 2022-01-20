@@ -1,9 +1,10 @@
-import Counter from './Counter';
+import CounterClass from './CounterClass';
+import CounterFunctional from './CounterFunctional';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      
     </div>
   );
 }

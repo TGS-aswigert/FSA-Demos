@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'
 
-export default function Counter() {
+export default function CounterFunctional() {
 
   function add1ToCount() {};
 
@@ -9,7 +9,7 @@ export default function Counter() {
 
   return (
     <div className='counter'>
-      <h1>count</h1>
+      <h1>0</h1>
 
       <div className='buttons'>
         <button>-</button>
