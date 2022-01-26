@@ -1,3 +1,24 @@
 .App {
   text-align: center;
 }
+
+.counter {
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px 0;
+  text-align: center;
+  background-color: coral;
+  border-radius: 10px;
+}
+
+
+.buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 50px;
+  border-radius: 5px;
+}
