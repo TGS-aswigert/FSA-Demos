@@ -18,4 +18,10 @@ public class Developer_end extends Employee_end {
     public void setCurrentProject(String currentProject) {
         this.currentProject = currentProject;
     }
+
+    @Override
+    public void onBoard() {
+        super.onBoard();
+        System.out.println(this.getName() + " completed the Degreed developer training");
+    }
 }

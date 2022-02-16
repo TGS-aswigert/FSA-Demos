@@ -12,7 +12,9 @@ public class Employee_end {
     }
 
     public void onBoard() {
-        System.out.println(this.name + " has been onboarded to TEKsystems.");
+        System.out.println(this.name + " setup their laptop");
+        System.out.println(this.name + " checked their email");
+        System.out.println(this.name + " completed the Degreed security training");
     };
 
     public void offBoard() {
