@@ -28,13 +28,11 @@ public class Main_end {
 //        names.clear();
 //        System.out.println(names.size());
 
-//        for (int i = 0; i < names.size(); i++) {
-//            System.out.println(names.get(i));
-//        }
-
         for (String name : names) {
             System.out.println(name);
         }
+
+        names.forEach(System.out::println);
 
     }
 }
