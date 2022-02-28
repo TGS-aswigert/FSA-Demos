@@ -14,7 +14,7 @@ public class Calculator_end {
 
     public static float divide(float num1, float num2) {
         if (num2 == 0) {
-            throw new Error("Denominator cannot be 0");
+            throw new IllegalArgumentException("Denominator cannot be 0");
         }
         return num1 / num2;
     };

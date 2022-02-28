@@ -10,32 +10,32 @@ public class CalculatorTest_end {
         //act
         actual = Calculator_end.add(2,2);
         //assert
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(actual, expected);
     }
 
     @Test
     public static void subtractShouldReturn0Given2And2() {
-        Assert.assertEquals(0, Calculator_end.subtract(2,2));
+        Assert.assertEquals(Calculator_end.subtract(2,2), 0);
     }
 
     @Test
     public static void multiplyReturns4Given2and2() {
-        Assert.assertEquals(4, Calculator_end.multiply(2,2));
+        Assert.assertEquals(Calculator_end.multiply(2,2), 4);
     }
 
     @Test
     public static void multiplyShouldReturnANegativeGivenOneNegativeArgument() {
-        Assert.assertEquals(-4, Calculator_end.multiply(2,-2));
+        Assert.assertEquals(Calculator_end.multiply(2,-2), -4);
     }
 
     @Test
     public static void divideShouldReturn2Given4And2() {
-        Assert.assertEquals(2, Calculator_end.divide(4,2));
+        Assert.assertEquals(Calculator_end.divide(4,2), 2);
     }
 
     @Test
-    public static void divideShouldReturnErrorGivenDenominatorOf0() {
-        Assert.assertThrows(Error.class, () -> Calculator_end.divide(2, 0));
+    public static void divideShouldThrowExceptionGivenDenominatorOf0() {
+        Assert.assertThrows(IllegalArgumentException.class, () -> Calculator_end.divide(2, 0));
     }
 
 }
