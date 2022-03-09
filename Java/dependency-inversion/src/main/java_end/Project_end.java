@@ -1,5 +1,3 @@
-package com.solid.finished;
-
 import java.util.List;
 
 public class Project {

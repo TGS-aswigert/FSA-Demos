@@ -1,5 +1,3 @@
-package com.solid.finished;
-
 public class BackendDeveloper implements Developer {
 
     @Override
