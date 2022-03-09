@@ -1,6 +1,4 @@
-package com.solid.finished;
-
-public class Triangle implements Shape {
+public class Triangle_end implements Shape_end {
     public double base;
     public double height;
 

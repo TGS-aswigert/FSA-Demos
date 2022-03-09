@@ -1,6 +1,4 @@
-package com.solid.finished;
-
-public class Rectangle implements Shape {
+public class Rectangle_end implements Shape_end {
     public double length;
     public double width;
 

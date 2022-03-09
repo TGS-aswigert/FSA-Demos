@@ -1,6 +1,4 @@
-package com.solid.finished;
-
-public class Circle implements Shape {
+public class Circle_end implements Shape_end {
     public double radius;
 
     @Override
