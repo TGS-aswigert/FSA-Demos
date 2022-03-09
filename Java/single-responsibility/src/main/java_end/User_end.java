@@ -1,6 +1,4 @@
-package com.solid;
-
-public class User {
+public class User_end {
     public String name;
     public String email;
     public boolean isValid;

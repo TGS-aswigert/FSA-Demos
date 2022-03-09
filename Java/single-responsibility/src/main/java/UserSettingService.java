@@ -1,5 +1,3 @@
-package com.solid;
-
 public class UserSettingService {
     public void changeEmail(User user, String newEmail) {
         if(checkAccess(user)) {
