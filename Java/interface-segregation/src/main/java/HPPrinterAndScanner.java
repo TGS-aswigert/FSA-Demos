@@ -1,6 +1,4 @@
-package com.solid;
-
-public class XeroxWorkCenter implements MultiFunctionPrinter {
+public class HPPrinterAndScanner implements MultiFunctionPrinter {
 
     @Override
     public void print() {
@@ -18,7 +16,5 @@ public class XeroxWorkCenter implements MultiFunctionPrinter {
     }
 
     @Override
-    public void fax() {
-        // send fax
-    }
+    public void fax() {}
 }

@@ -1,6 +1,6 @@
 package com.solid.finished;
 
-public class XeroxWorkCenter implements Printer, Scanner, FaxMachine {
+public class XeroxWorkCenter_end implements Printer_end, Scanner_end, FaxMachine_end {
 
     @Override
     public void print() {

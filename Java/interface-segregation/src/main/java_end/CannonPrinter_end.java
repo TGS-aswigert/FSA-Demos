@@ -1,6 +1,6 @@
 package com.solid.finished;
 
-public class CannonPrinter implements Printer {
+public class CannonPrinter_end implements Printer_end {
 
     @Override
     public void print() {

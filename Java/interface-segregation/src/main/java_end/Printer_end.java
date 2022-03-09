@@ -1,5 +1,5 @@
 package com.solid.finished;
 
-public interface Printer {
+public interface Printer_end {
     public void print();
 }

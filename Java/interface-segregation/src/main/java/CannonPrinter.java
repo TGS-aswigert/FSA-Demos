@@ -1,5 +1,3 @@
-package com.solid;
-
 public class CannonPrinter implements MultiFunctionPrinter {
 
     @Override

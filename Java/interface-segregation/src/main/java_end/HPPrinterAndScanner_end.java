@@ -1,6 +1,6 @@
-package com.solid;
+package com.solid.finished;
 
-public class HPPrinterAndScanner implements MultiFunctionPrinter {
+public class HPPrinterAndScanner_end implements Printer_end, Scanner_end {
 
     @Override
     public void print() {
@@ -16,7 +16,4 @@ public class HPPrinterAndScanner implements MultiFunctionPrinter {
     public void scanPhoto() {
         // scan photos
     }
-
-    @Override
-    public void fax() {}
 }

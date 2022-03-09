@@ -1,6 +1,4 @@
-package com.solid.finished;
-
-public class HPPrinterAndScanner implements Printer, Scanner {
+public class XeroxWorkCenter implements MultiFunctionPrinter {
 
     @Override
     public void print() {
@@ -15,5 +13,10 @@ public class HPPrinterAndScanner implements Printer, Scanner {
     @Override
     public void scanPhoto() {
         // scan photos
+    }
+
+    @Override
+    public void fax() {
+        // send fax
     }
 }
