@@ -1,38 +1,19 @@
 public class Car {
-    private String color;
+    private Color color;
     private final double basePrice;
 
     public Car() {
-        this.color = "Black";
+        this.color = Color.BLACK;
         this.basePrice = 20_000.00;
     }
 
     public double getTotalPrice() {
         double total = this.basePrice;
-        switch (this.color) {
-            case "Black":
-                total += 0;
-                break;
-            case "Blue":
-                total += 2_000.00;
-                break;
-            case "White":
-                total += 800;
-                break;
-            case "Red":
-                total += 5_000;
-                break;
-            case "Green":
-                total += 3_500;
-                break;
-            case "Yellow":
-                total += 1_500;
-                break;
-        }
+        total += this.color.getPrice();
         return total;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 }
