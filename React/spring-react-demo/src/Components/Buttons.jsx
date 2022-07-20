@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getPagedData, getDataCount } from '../utils';
 
-export default function Buttons({ setter }) {
+export default function Buttons({ setter, entity }) {
 
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
 
   useEffect(() => {
-    getDataCount().then(data => setPageCount(Math.ceil(data / 5)));
-  },
-    []);
+    getDataCount(entity).then(data => setPageCount(Math.ceil(data / 5)));
+  }, [entity]);
 
   function getNextPage() {
     if (page < pageCount - 1) {
@@ -24,7 +23,7 @@ export default function Buttons({ setter }) {
   }
 
   function goToPage(pageNum) {
-    getPagedData(pageNum).then(data => setter(data));
+    getPagedData(entity, pageNum).then(data => setter(data));
     setPage(pageNum);
   }
 

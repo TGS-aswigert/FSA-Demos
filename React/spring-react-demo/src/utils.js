@@ -1,11 +1,13 @@
-export function getPagedData(page) {
-  return fetch(`http://localhost:8080/api/students/${page}/5`)
+export function getPagedData(entity, pageNum) {
+  return fetch(`http://localhost:8080/api/${entity}/?page=${pageNum}&limit=5`, {
+    method: "GET"
+  })
   .then(response => response.json())
   .then(jsonResponse => jsonResponse);
 }
 
-export function getDataCount() {
-  return fetch(`http://localhost:8080/api/students/count`)
+export function getDataCount(entity) {
+  return fetch(`http://localhost:8080/api/${entity}/count`)
   .then(response => response.json())
   .then(jsonResponse => jsonResponse);
 }

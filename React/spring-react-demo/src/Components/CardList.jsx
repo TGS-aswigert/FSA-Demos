@@ -11,8 +11,8 @@ export default function CardList() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getPagedData(0).then(data => setData(data));
-  }, []);
+    getPagedData(entity, 0).then(data => setData(data));
+  }, [entity]);
 
   function toTitleCase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -24,7 +24,7 @@ export default function CardList() {
       <div className='list'>
         {data.map(data => <Card data={data} key={entity + data.id} />)}
       </div>
-      <Buttons setter={setData} />
+      <Buttons setter={setData} entity={entity} />
     </Fragment>
   )
 }
