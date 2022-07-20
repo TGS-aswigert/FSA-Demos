@@ -14,6 +14,7 @@ export default function StudentsList() {
 
   return (
     <Fragment>
+      <h1>Students</h1>
       <div className='list'>
         {students.map(student => <Card data={student} key={student.id} />)}
       </div>

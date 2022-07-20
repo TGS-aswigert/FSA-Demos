@@ -14,14 +14,12 @@ export default function Buttons({ setter }) {
   function getNextPage() {
     if (page < pageCount - 1) {
       goToPage(page + 1);
-      setPage(page + 1);
     }
   }
 
   function getPrevPage() {
     if (page > 0) {
       goToPage(page - 1);
-      setPage(page - 1);
     }
   }
 
