@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getPagedStudents, getStudentCount } from '../utils';
+import { getPagedData, getDataCount } from '../utils';
 
 export default function Buttons({ setter }) {
 
@@ -7,7 +7,7 @@ export default function Buttons({ setter }) {
   const [page, setPage] = useState(0);
 
   useEffect(() => {
-    getStudentCount().then(data => setPageCount(Math.ceil(data / 5)));
+    getDataCount().then(data => setPageCount(Math.ceil(data / 5)));
   },
     []);
 
@@ -24,7 +24,7 @@ export default function Buttons({ setter }) {
   }
 
   function goToPage(pageNum) {
-    getPagedStudents(pageNum).then(data => setter(data));
+    getPagedData(pageNum).then(data => setter(data));
     setPage(pageNum);
   }
 
