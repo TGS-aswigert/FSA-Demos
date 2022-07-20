@@ -13,10 +13,10 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
-    @GetMapping("/{page}/{limit}")
+    @GetMapping("/")
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<Team> getPaginatedTeams(@PathVariable int page,
-                                              @PathVariable int limit) {
+    public List<Team> getPaginatedTeams(@RequestParam int page,
+                                        @RequestParam int limit) {
         return teamService.getPaginatedTeams(page, limit);
     }
 

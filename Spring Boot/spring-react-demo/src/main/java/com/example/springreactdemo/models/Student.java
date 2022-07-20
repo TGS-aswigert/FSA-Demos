@@ -22,4 +22,11 @@ public class Student {
     @Getter @Setter
     private String name;
 
+    @ManyToOne
+    @Setter
+    private Team team;
+
+    public Long getTeam() {
+        return team.getId();
+    }
 }

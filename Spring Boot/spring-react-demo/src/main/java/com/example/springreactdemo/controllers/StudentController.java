@@ -14,10 +14,10 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/{page}/{limit}")
+    @GetMapping("/")
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<Student> getPaginatedStudents(@PathVariable int page,
-                                              @PathVariable int limit) {
+    public List<Student> getPaginatedStudents(@RequestParam int page,
+                                              @RequestParam int limit) {
         return studentService.getPaginatedStudents(page, limit);
     }
 
