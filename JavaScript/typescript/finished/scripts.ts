@@ -75,7 +75,7 @@ const heimdall = new Enemy("Heimdall", "Sword");
 
 atreus.pickupWeapon("Bow and Arrow");
 
-atreus.attack(heimdall, atreus.getWeaponsList().find(weapon => weapon = "Bow and Arrow"));
+atreus.attack(heimdall, atreus.getWeaponsList().find(weapon => weapon == "Bow and Arrow"));
 
 console.log(heimdall.getHealthPoints());
 
