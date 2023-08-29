@@ -42,7 +42,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--TODO: Remove for demo-->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>

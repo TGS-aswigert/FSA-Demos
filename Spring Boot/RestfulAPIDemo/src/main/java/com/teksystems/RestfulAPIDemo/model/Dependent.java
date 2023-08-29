@@ -25,8 +25,8 @@ public class Dependent {
     @Getter @Setter
     private String relationship;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
+//    @ManyToOne
+//    @JoinColumn(name = "employee_id")
     @Getter @Setter
-    private Employee employee;
+    private Integer employeeId;
 }
