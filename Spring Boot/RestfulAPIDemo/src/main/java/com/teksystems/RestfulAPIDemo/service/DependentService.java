@@ -1,9 +1,11 @@
 package com.teksystems.RestfulAPIDemo.service;
 
+import com.teksystems.RestfulAPIDemo.DTO.DependentDTO;
 import com.teksystems.RestfulAPIDemo.model.Dependent;
 import com.teksystems.RestfulAPIDemo.model.Employee;
 import com.teksystems.RestfulAPIDemo.repository.DependentRepository;
 import com.teksystems.RestfulAPIDemo.repository.EmployeeRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,17 +28,20 @@ public class DependentService {
         return dependentRepository.findById(dependentId).orElse(null);
     }
 
-    public Dependent addDependent(Dependent dependent) {
-        return dependentRepository.save(dependent);
+    public Dependent addDependent(DependentDTO dependent) {
+        Dependent newDependent = new Dependent();
+        BeanUtils.copyProperties(dependent, newDependent);
+        Employee employee = employeeRepository.findById(dependent.getEmployeeId()).orElse(null);
+        assert employee != null;
+        newDependent.setEmployee(employee);
+        return dependentRepository.save(newDependent);
     }
 
-    public Dependent updateDependent(Integer dependentId, Dependent dependentDetails) {
+    public Dependent updateDependent(Integer dependentId, DependentDTO dependentDetails) {
         Dependent dependent = dependentRepository.findById(dependentId).orElse(null);
         assert dependent != null;
-        dependent.setFirstName(dependentDetails.getFirstName());
-        dependent.setLastName(dependentDetails.getLastName());
-        dependent.setRelationship(dependentDetails.getRelationship());
-        Employee employee = employeeRepository.findById(dependentDetails.getEmployee().getEmployeeId()).orElse(null);
+        BeanUtils.copyProperties(dependentDetails, dependent);
+        Employee employee = employeeRepository.findById(dependentDetails.getEmployeeId()).orElse(null);
         assert employee != null;
         dependent.setEmployee(employee);
 

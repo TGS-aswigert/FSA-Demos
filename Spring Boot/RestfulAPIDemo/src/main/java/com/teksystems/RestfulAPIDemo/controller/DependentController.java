@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.DependentDTO;
 import com.teksystems.RestfulAPIDemo.model.Dependent;
 import com.teksystems.RestfulAPIDemo.service.DependentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class DependentController {
     }
 
     @PostMapping("/")
-    public Dependent addDependent(@RequestBody Dependent dependent) {
+    public Dependent addDependent(@RequestBody DependentDTO dependent) {
         return dependentService.addDependent(dependent);
     }
 
     @PutMapping("/{id}")
     public Dependent updateDependent(
             @PathVariable(value = "id") Integer dependentId,
-            @RequestBody Dependent dependent) {
+            @RequestBody DependentDTO dependent) {
         return dependentService.updateDependent(dependentId, dependent);
     }
 

@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.DepartmentDTO;
 import com.teksystems.RestfulAPIDemo.model.Department;
 import com.teksystems.RestfulAPIDemo.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class DepartmentController {
     }
 
     @PostMapping("/")
-    public Department addDepartment(@RequestBody Department department) {
+    public Department addDepartment(@RequestBody DepartmentDTO department) {
         return departmentService.addDepartment(department);
     }
 
     @PutMapping("/{id}")
     public Department updateDepartment(
             @PathVariable(value = "id") Integer departmentId,
-            @RequestBody Department department) {
+            @RequestBody DepartmentDTO department) {
         return departmentService.updateDepartment(departmentId, department);
     }
 

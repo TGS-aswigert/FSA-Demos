@@ -1,9 +1,11 @@
 package com.teksystems.RestfulAPIDemo.service;
 
+import com.teksystems.RestfulAPIDemo.DTO.CountryDTO;
 import com.teksystems.RestfulAPIDemo.model.Country;
 import com.teksystems.RestfulAPIDemo.model.Region;
 import com.teksystems.RestfulAPIDemo.repository.CountryRepository;
 import com.teksystems.RestfulAPIDemo.repository.RegionRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,15 +27,20 @@ public class CountryService {
         return countryRepository.findById(countryId).orElse(null);
     }
 
-    public Country addCountry(Country country) {
-        return countryRepository.save(country);
+    public Country addCountry(CountryDTO country) {
+        Country newCountry = new Country();
+        BeanUtils.copyProperties(country, newCountry);
+        Region region = regionRepository.findById(country.getRegionId()).orElse(null);
+        assert region != null;
+        newCountry.setRegion(region);
+        return countryRepository.save(newCountry);
     }
 
-    public Country updateCountry(String countryId, Country countryDetails) {
+    public Country updateCountry(String countryId, CountryDTO countryDetails) {
         Country country = countryRepository.findById(countryId).orElse(null);
         assert country != null;
-        country.setCountryName(countryDetails.getCountryName());
-        Region region = regionRepository.findById(countryDetails.getRegion().getRegionId()).orElse(null);
+        BeanUtils.copyProperties(countryDetails, country);
+        Region region = regionRepository.findById(countryDetails.getRegionId()).orElse(null);
         assert region != null;
         country.setRegion(region);
 

@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.EmployeeDTO;
 import com.teksystems.RestfulAPIDemo.model.Employee;
 import com.teksystems.RestfulAPIDemo.service.EmployeeService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,18 +30,18 @@ public class EmployeeController {
     }
 
     @PostMapping("/")
-    public Employee addEmployee(@RequestBody Employee employee) {
+    public Employee addEmployee(@RequestBody EmployeeDTO employee) {
         return employeeService.addEmployee(employee);
     }
 
     @PutMapping("/{id}")
     public Employee updateEmployee(
             @PathVariable(value = "id") Integer employeeId,
-            @RequestBody Employee employee) {
+            @RequestBody EmployeeDTO employee) {
         return employeeService.updateEmployee(employeeId, employee);
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping("/{id}")
     public String deleteEmployee(@PathVariable(value = "id") Integer employeeId) {
         return employeeService.deleteEmployee(employeeId);
     }

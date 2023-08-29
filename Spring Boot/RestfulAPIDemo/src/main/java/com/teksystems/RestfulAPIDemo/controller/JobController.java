@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.JobDTO;
 import com.teksystems.RestfulAPIDemo.model.Job;
 import com.teksystems.RestfulAPIDemo.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class JobController {
     }
 
     @PostMapping("/")
-    public Job addJob(@RequestBody Job job) {
+    public Job addJob(@RequestBody JobDTO job) {
         return jobService.addJob(job);
     }
 
     @PutMapping("/{id}")
     public Job updateJob(
             @PathVariable(value = "id") Integer jobId,
-            @RequestBody Job job) {
+            @RequestBody JobDTO job) {
         return jobService.updateJob(jobId, job);
     }
 

@@ -1,10 +1,12 @@
 package com.teksystems.RestfulAPIDemo.service;
 
+import com.teksystems.RestfulAPIDemo.DTO.LocationDTO;
 import com.teksystems.RestfulAPIDemo.model.Country;
 import com.teksystems.RestfulAPIDemo.model.Job;
 import com.teksystems.RestfulAPIDemo.model.Location;
 import com.teksystems.RestfulAPIDemo.repository.CountryRepository;
 import com.teksystems.RestfulAPIDemo.repository.LocationRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,19 +29,21 @@ public class LocationService {
         return locationRepository.findById(locationId).orElse(null);
     }
 
-    public Location addLocation(Location location) {
-        return locationRepository.save(location);
+    public Location addLocation(LocationDTO location) {
+        Location newLocation = new Location();
+        BeanUtils.copyProperties(location, newLocation);
+        Country country = countryRepository.findById(location.getCountryId()).orElse(null);
+        assert country != null;
+        newLocation.setCountry(country);
+        return locationRepository.save(newLocation);
     }
 
-    public Location updateLocation(Integer locationId, Location locationDetails) {
+    public Location updateLocation(Integer locationId, LocationDTO locationDetails) {
         Location location = locationRepository.findById(locationId).orElse(null);
         assert location != null;
-        location.setCity(locationDetails.getCity());
-        location.setPostalCode(locationDetails.getPostalCode());
-        location.setStreetAddress(locationDetails.getStreetAddress());
-        location.setStateOrProvince(locationDetails.getStateOrProvince());
+        BeanUtils.copyProperties(locationDetails, location);
 
-        Country country = countryRepository.findById(locationDetails.getCountry().getCountryId()).orElse(null);
+        Country country = countryRepository.findById(locationDetails.getCountryId()).orElse(null);
         assert country != null;
         location.setCountry(country);
 

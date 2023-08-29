@@ -1,9 +1,11 @@
 package com.teksystems.RestfulAPIDemo.service;
 
+import com.teksystems.RestfulAPIDemo.DTO.DepartmentDTO;
 import com.teksystems.RestfulAPIDemo.model.Department;
 import com.teksystems.RestfulAPIDemo.model.Location;
 import com.teksystems.RestfulAPIDemo.repository.DepartmentRepository;
 import com.teksystems.RestfulAPIDemo.repository.LocationRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,15 +28,20 @@ public class DepartmentService {
         return departmentRepository.findById(departmentId).orElse(null);
     }
 
-    public Department addDepartment(Department department) {
-        return departmentRepository.save(department);
+    public Department addDepartment(DepartmentDTO department) {
+        Department newDepartment = new Department();
+        BeanUtils.copyProperties(department, newDepartment);
+        Location location = locationRepository.findById(department.getLocationId()).orElse(null);
+        assert location != null;
+        newDepartment.setLocation(location);
+        return departmentRepository.save(newDepartment);
     }
 
-    public Department updateDepartment(Integer departmentId, Department departmentDetails) {
+    public Department updateDepartment(Integer departmentId, DepartmentDTO departmentDetails) {
         Department department = departmentRepository.findById(departmentId).orElse(null);
         assert department != null;
-        department.setDepartmentName(departmentDetails.getDepartmentName());
-        Location location = locationRepository.findById(departmentDetails.getLocation().getLocationId()).orElse(null);
+        BeanUtils.copyProperties(departmentDetails, department);
+        Location location = locationRepository.findById(departmentDetails.getLocationId()).orElse(null);
         assert location != null;
         department.setLocation(location);
 

@@ -1,9 +1,9 @@
 package com.teksystems.RestfulAPIDemo.service;
 
-import com.teksystems.RestfulAPIDemo.model.Department;
-import com.teksystems.RestfulAPIDemo.model.Region;
+import com.teksystems.RestfulAPIDemo.DTO.RegionDTO;
 import com.teksystems.RestfulAPIDemo.model.Region;
 import com.teksystems.RestfulAPIDemo.repository.RegionRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +22,16 @@ public class RegionService {
         return regionRepository.findById(regionId).orElse(null);
     }
 
-    public Region addRegion(Region region) {
-        return regionRepository.save(region);
+    public Region addRegion(RegionDTO region) {
+        Region newRegion = new Region();
+        BeanUtils.copyProperties(region, newRegion);
+        return regionRepository.save(newRegion);
     }
 
-    public Region updateRegion(Integer regionId, Region regionDetails) {
+    public Region updateRegion(Integer regionId, RegionDTO regionDetails) {
         Region region = regionRepository.findById(regionId).orElse(null);
         assert region != null;
-        region.setRegionName(regionDetails.getRegionName());
+        BeanUtils.copyProperties(regionDetails, region);
 
         return regionRepository.save(region);
     }

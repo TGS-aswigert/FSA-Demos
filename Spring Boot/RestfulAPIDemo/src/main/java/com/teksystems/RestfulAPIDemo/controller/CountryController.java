@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.CountryDTO;
 import com.teksystems.RestfulAPIDemo.model.Country;
 import com.teksystems.RestfulAPIDemo.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,14 @@ public class CountryController {
     }
 
     @PostMapping("/")
-    public Country addCountry(@RequestBody Country country) {
+    public Country addCountry(@RequestBody CountryDTO country) {
         return countryService.addCountry(country);
     }
 
     @PutMapping("/{id}")
-    public Country updateCountry(@PathVariable(value = "id") String countryId, @RequestBody Country country) {
+    public Country updateCountry(
+            @PathVariable(value = "id") String countryId,
+            @RequestBody CountryDTO country) {
         return countryService.updateCountry(countryId, country);
     }
 

@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.RegionDTO;
 import com.teksystems.RestfulAPIDemo.model.Region;
 import com.teksystems.RestfulAPIDemo.service.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class RegionController {
     }
 
     @PostMapping("/")
-    public Region addRegion(@RequestBody Region region) {
+    public Region addRegion(@RequestBody RegionDTO region) {
         return regionService.addRegion(region);
     }
 
     @PutMapping("/{id}")
     public Region updateRegion(
             @PathVariable(value = "id") Integer regionId,
-            @RequestBody Region region) {
+            @RequestBody RegionDTO region) {
         return regionService.updateRegion(regionId, region);
     }
 

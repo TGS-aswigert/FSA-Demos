@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.controller;
 
+import com.teksystems.RestfulAPIDemo.DTO.LocationDTO;
 import com.teksystems.RestfulAPIDemo.model.Job;
 import com.teksystems.RestfulAPIDemo.model.Location;
 import com.teksystems.RestfulAPIDemo.service.LocationService;
@@ -26,14 +27,14 @@ public class LocationController {
     }
 
     @PostMapping("/")
-    public Location addLocation(@RequestBody Location location) {
+    public Location addLocation(@RequestBody LocationDTO location) {
         return locationService.addLocation(location);
     }
 
     @PutMapping("/{id}")
     public Location updateLocation(
             @PathVariable(value = "id") Integer locationId,
-            @RequestBody Location location) {
+            @RequestBody LocationDTO location) {
         return locationService.updateLocation(locationId, location);
     }
 

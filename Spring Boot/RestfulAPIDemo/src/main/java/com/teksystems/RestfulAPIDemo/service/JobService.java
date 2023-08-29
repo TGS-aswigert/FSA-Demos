@@ -1,8 +1,10 @@
 package com.teksystems.RestfulAPIDemo.service;
 
+import com.teksystems.RestfulAPIDemo.DTO.JobDTO;
 import com.teksystems.RestfulAPIDemo.model.Country;
 import com.teksystems.RestfulAPIDemo.model.Job;
 import com.teksystems.RestfulAPIDemo.repository.JobRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,16 +24,16 @@ public class JobService {
         return jobRepository.findById(jobId).orElse(null);
     }
 
-    public Job addJob(Job job) {
-        return jobRepository.save(job);
+    public Job addJob(JobDTO job) {
+        Job newJob = new Job();
+        BeanUtils.copyProperties(job, newJob);
+        return jobRepository.save(newJob);
     }
 
-    public Job updateJob(Integer jobId, Job jobDetails) {
+    public Job updateJob(Integer jobId, JobDTO jobDetails) {
         Job job = jobRepository.findById(jobId).orElse(null);
         assert job != null;
-        job.setJobTitle(jobDetails.getJobTitle());
-        job.setMinSalary(jobDetails.getMinSalary());
-        job.setMaxSalary(jobDetails.getMaxSalary());
+        BeanUtils.copyProperties(jobDetails, job);
 
         return jobRepository.save(job);
     }
