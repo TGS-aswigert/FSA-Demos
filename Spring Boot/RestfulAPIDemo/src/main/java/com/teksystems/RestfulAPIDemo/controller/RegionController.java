@@ -3,10 +3,7 @@ package com.teksystems.RestfulAPIDemo.controller;
 import com.teksystems.RestfulAPIDemo.model.Region;
 import com.teksystems.RestfulAPIDemo.service.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,22 @@ public class RegionController {
     @GetMapping("/{id}")
     public Region getRegion(@PathVariable(value = "id") Integer regionId) {
         return regionService.getRegion(regionId);
+    }
+
+    @PostMapping("/")
+    public Region addRegion(@RequestBody Region region) {
+        return regionService.addRegion(region);
+    }
+
+    @PutMapping("/{id}")
+    public Region updateRegion(
+            @PathVariable(value = "id") Integer regionId,
+            @RequestBody Region region) {
+        return regionService.updateRegion(regionId, region);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteRegion(@PathVariable(value = "id") Integer regionId) {
+        return regionService.deleteRegion(regionId);
     }
 }

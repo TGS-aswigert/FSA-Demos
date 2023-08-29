@@ -20,7 +20,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
-    @Getter @Setter
+    @Getter
     private Integer employeeId;
 
     @Getter @Setter

@@ -13,7 +13,7 @@ public class Dependent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
     private Integer dependentId;
 
     @Getter @Setter

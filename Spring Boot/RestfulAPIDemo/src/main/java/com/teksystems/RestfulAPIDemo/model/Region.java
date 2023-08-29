@@ -16,7 +16,7 @@ public class Region {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
     private Integer regionId;
 
     @Getter @Setter

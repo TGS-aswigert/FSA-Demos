@@ -18,7 +18,7 @@ public class Job {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
     private Integer jobId;
 
     @Getter @Setter

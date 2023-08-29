@@ -3,10 +3,7 @@ package com.teksystems.RestfulAPIDemo.controller;
 import com.teksystems.RestfulAPIDemo.model.Job;
 import com.teksystems.RestfulAPIDemo.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,23 @@ public class JobController {
     @GetMapping("/{id}")
     public Job getJob(@PathVariable(value = "id") Integer jobId) {
         return jobService.getJob(jobId);
+    }
+
+    @PostMapping("/")
+    public Job addJob(@RequestBody Job job) {
+        return jobService.addJob(job);
+    }
+
+    @PutMapping("/{id}")
+    public Job updateJob(
+            @PathVariable(value = "id") Integer jobId,
+            @RequestBody Job job) {
+        return jobService.updateJob(jobId, job);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteJob(@PathVariable(value = "id") Integer jobId) {
+        return jobService.deleteJob(jobId);
     }
 
 }

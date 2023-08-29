@@ -3,10 +3,7 @@ package com.teksystems.RestfulAPIDemo.controller;
 import com.teksystems.RestfulAPIDemo.model.Dependent;
 import com.teksystems.RestfulAPIDemo.service.DependentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,22 @@ public class DependentController {
     @GetMapping("/{id}")
     public Dependent getDependent(@PathVariable(value = "id") Integer dependentId) {
         return dependentService.getDependent(dependentId);
+    }
+
+    @PostMapping("/")
+    public Dependent addDependent(@RequestBody Dependent dependent) {
+        return dependentService.addDependent(dependent);
+    }
+
+    @PutMapping("/{id}")
+    public Dependent updateDependent(
+            @PathVariable(value = "id") Integer dependentId,
+            @RequestBody Dependent dependent) {
+        return dependentService.updateDependent(dependentId, dependent);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteDependent(@PathVariable(value = "id") Integer dependentId) {
+        return dependentService.deleteDependent(dependentId);
     }
 }

@@ -1,5 +1,6 @@
 package com.teksystems.RestfulAPIDemo.model;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +14,7 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
     private Integer departmentId;
 
     @Getter @Setter

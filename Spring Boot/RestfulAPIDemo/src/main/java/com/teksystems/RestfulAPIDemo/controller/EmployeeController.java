@@ -5,10 +5,7 @@ import com.teksystems.RestfulAPIDemo.service.EmployeeService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -29,6 +26,23 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public Employee getEmployee(@PathVariable(value = "id") Integer employeeId) {
         return employeeService.getEmployee(employeeId);
+    }
+
+    @PostMapping("/")
+    public Employee addEmployee(@RequestBody Employee employee) {
+        return employeeService.addEmployee(employee);
+    }
+
+    @PutMapping("/{id}")
+    public Employee updateEmployee(
+            @PathVariable(value = "id") Integer employeeId,
+            @RequestBody Employee employee) {
+        return employeeService.updateEmployee(employeeId, employee);
+    }
+
+    @DeleteMapping("/")
+    public String deleteEmployee(@PathVariable(value = "id") Integer employeeId) {
+        return employeeService.deleteEmployee(employeeId);
     }
 
 }

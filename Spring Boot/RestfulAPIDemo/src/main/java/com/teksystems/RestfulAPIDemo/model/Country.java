@@ -23,4 +23,5 @@ public class Country {
     @JoinColumn(name = "region_id")
     @Getter @Setter
     private Region region;
+
 }

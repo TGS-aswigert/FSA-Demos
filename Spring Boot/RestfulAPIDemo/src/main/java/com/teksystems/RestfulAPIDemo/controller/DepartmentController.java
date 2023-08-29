@@ -3,10 +3,7 @@ package com.teksystems.RestfulAPIDemo.controller;
 import com.teksystems.RestfulAPIDemo.model.Department;
 import com.teksystems.RestfulAPIDemo.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,22 @@ public class DepartmentController {
     @GetMapping("/{id}")
     private Department getDepartment(@PathVariable(value = "id") Integer departmentId) {
         return departmentService.getDepartment(departmentId);
+    }
+
+    @PostMapping("/")
+    public Department addDepartment(@RequestBody Department department) {
+        return departmentService.addDepartment(department);
+    }
+
+    @PutMapping("/{id}")
+    public Department updateDepartment(
+            @PathVariable(value = "id") Integer departmentId,
+            @RequestBody Department department) {
+        return departmentService.updateDepartment(departmentId, department);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteDepartment(@PathVariable(value = "id") Integer departmentId) {
+        return departmentService.deleteDepartment(departmentId);
     }
 }

@@ -13,7 +13,7 @@ public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
     private Integer locationId;
 
     @Getter @Setter
