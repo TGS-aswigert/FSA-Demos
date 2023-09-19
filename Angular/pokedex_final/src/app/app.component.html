@@ -1,0 +1,5 @@
+<div id="container">
+  <h1 id="title">Pokedex</h1>
+  <app-search (findPokemon)="setPokemon($event)" />
+  <app-result [pokemon]="pokemon" />
+</div>
