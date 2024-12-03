@@ -1,0 +1,17 @@
+<img id="placeholder" *ngIf="!pokemon" src="assets/whos_that_pokemon.png" />
+<div *ngIf="pokemon" id="pokemon-result">
+  <img
+    id="sprite"
+    [src]="pokemon.sprites.other['official-artwork'].front_default"
+    [alt]="'front default sprite of ' + pokemon.name"
+  />
+  <h2>{{ pokemon.name | titlecase }}</h2>
+  <p>Types:</p>
+  <div id="type-list">
+    <img
+      *ngFor="let type of pokemon.types"
+      [src]="'assets/' + type.type.name + '.png'"
+      [alt]="type.type.name + 'type icon'"
+    />
+  </div>
+</div>
