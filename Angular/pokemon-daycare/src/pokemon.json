@@ -1,0 +1,50 @@
+[
+    {
+        "trainerName" : "Ash Ketchum",
+        "pokemonName" : "Ditto",
+        "pokemonImg" : "ditto.png",
+        "health" : 50,
+        "food" : 85,
+        "level" : 35
+    },
+    {
+        "trainerName" : "Gary Oak",
+        "pokemonName" : "Gastly",
+        "pokemonImg" : "gastly.png",
+        "health" : 100,
+        "food" : 60,
+        "level" : 95
+    },
+    {
+        "trainerName" : "Jesse",
+        "pokemonName" : "Meowth",
+        "pokemonImg" : "meowth.png",
+        "health" : 20,
+        "food" : 100,
+        "level" : 50
+    },
+    {
+        "trainerName" : "James",
+        "pokemonName" : "Slowpoke",
+        "pokemonImg" : "slowpoke.png",
+        "health" : 70,
+        "food" : 65,
+        "level" : 5
+    },
+    {
+        "trainerName" : "Professor Turo",
+        "pokemonName" : "Egg",
+        "pokemonImg" : "egg.png",
+        "health" : 0,
+        "food" : 0,
+        "level" : 0
+    },
+    {
+        "trainerName" : "Officer Jenny",
+        "pokemonName" : "Staryu",
+        "pokemonImg" : "staryu.png",
+        "health" : 10,
+        "food" : 15,
+        "level" : 90
+    }
+]
