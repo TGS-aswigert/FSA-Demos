@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import '@angular/material/prebuilt-themes/rose-red.css';
+
+:root {
+    --poke-red: #ed5564;
+    --poke-green: #a0d468;
+    --poke-blue: #5d9cec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+}
+
