@@ -6,6 +6,8 @@
 </nav>
 <main>
   <div id="yard">
-    <app-poke-card />
+    @for (pokemon of pokemonList; track pokemon) {
+    <app-poke-card [info]="pokemon" />
+    }
   </div>
 </main>

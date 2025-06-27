@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PokeCard } from './poke-card/poke-card';
+import pokemonList from '../pokemon.json';
+import Pokemon from './Pokemon';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +11,5 @@ import { PokeCard } from './poke-card/poke-card';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'pokemon-daycare';
+  pokemonList: Array<Pokemon> = pokemonList;
 }

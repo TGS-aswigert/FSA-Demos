@@ -1,17 +1,21 @@
 <div id="poke-card">
   <div id="trainer-info">
-    <p id="trainer-name">Ash Ketchum</p>
+    <p id="trainer-name">{{ info().trainerName }}</p>
     <img
       src="pokemon-trainer.png"
-      alt="Pokemon trainer avatar"
+      alt="{{ info().trainerName }} trainer avatar"
       id="trainer-avatar"
     />
   </div>
-  <img src="ditto.png" alt="pokemon avatar" id="poke-avatar" />
-  <p id="poke-name">Pokemon Name</p>
+  <img
+    src="{{ info().pokemonImg }}"
+    alt="{{ info().pokemonName }} avatar"
+    id="poke-avatar"
+  />
+  <p id="poke-name">{{ info().pokemonName }}</p>
   <div id="trackers">
-    <app-tracker />
-    <app-tracker />
-    <app-tracker />
+    <app-tracker trackerType="health" [status]="info().health" />
+    <app-tracker trackerType="food" [status]="info().food" />
+    <app-tracker trackerType="level" [status]="info().level" />
   </div>
 </div>

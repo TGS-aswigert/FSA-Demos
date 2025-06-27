@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Tracker } from './tracker/tracker';
+import Pokemon from '../Pokemon';
 
 @Component({
   selector: 'app-poke-card',
@@ -7,4 +8,13 @@ import { Tracker } from './tracker/tracker';
   templateUrl: './poke-card.html',
   styleUrl: './poke-card.css',
 })
-export class PokeCard {}
+export class PokeCard {
+  info = input<Pokemon>({
+    trainerName: 'Trainer Name',
+    pokemonName: 'Pokemon Name',
+    pokemonImg: 'favicon.png',
+    health: 100,
+    food: 100,
+    level: 100,
+  });
+}
