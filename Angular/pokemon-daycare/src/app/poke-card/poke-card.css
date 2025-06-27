@@ -1,0 +1,42 @@
+#poke-card {
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+#trainer-info {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+}
+
+#trainer-name {
+    font-weight: 500;
+}
+
+#trainer-avatar {
+    height: 30px;
+    background-color: wheat;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#poke-avatar {
+    height: 100px;
+}
+
+#poke-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#trackers {
+    display: flex;
+}

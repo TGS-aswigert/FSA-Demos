@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PokeCard } from './poke-card/poke-card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [PokeCard],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
