@@ -13,15 +13,6 @@ export class Tracker {
   status = input<number>(0);
 
   getTrackerImgUrl() {
-    switch (this.trackerType()) {
-      case 'health':
-        return 'health.png';
-      case 'food':
-        return 'food.png';
-      case 'level':
-        return 'up-arrow.png';
-      default:
-        return 'favicon.png';
-    }
+    return this.trackerType() ? this.trackerType() + '.png' : 'favicon.png';
   }
 }
